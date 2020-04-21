@@ -1,6 +1,10 @@
 package jon.curnutt.project3;
 // api key b5f9b213
 
+//api call for specific episode https://www.omdbapi.com/?apikey=b5f9b213&t=[insert title]&season=[insert season]&episode=[insert episode]
+
+//********PROBABLY SHOULDN'T ALLOW THE USER TO SPECIFY EPISODES BECAUSE IT GETS VERY COMPLICATED********\\
+
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -64,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
             case R.id.action_about:
                 // App description in alert dialogue
                 AlertDialog.Builder builder = new AlertDialog.Builder(this);
-                builder.setMessage(MainActivity.this.getString(R.string.app_description))
+                builder.setMessage(MainActivity.this.getText(R.string.app_description))
                         .setCancelable(false)
                         .setTitle(R.string.app_description_title)
                         .setPositiveButton(R.string.close_appdesc_dialog, new DialogInterface.OnClickListener() {
@@ -111,6 +115,7 @@ public class MainActivity extends AppCompatActivity {
         // Create a new RequestQueue
         RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
 
+        //this api call only works for movies and generic TV shows (not specific episodes yet)
         String url = "https://www.omdbapi.com/?apikey=" + KEY + "&t=" + input;
 
         // Create a new JsonObjectRequest that requests available subjects

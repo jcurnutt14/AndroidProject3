@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:layout_marginTop="20dp"
     tools:context=".MainActivity">
-    
+
     <TextView
         android:id="@+id/MovieTitleTextView"
         android:layout_width="match_parent"
