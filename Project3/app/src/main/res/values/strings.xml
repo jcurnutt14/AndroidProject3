@@ -4,4 +4,7 @@
     <string name="submit">Submit</string>
     <string name="api_error">The API could not find the requested movie/show.</string>
     <string name="invalid_location">The requested location is not valid. Check for spelling errors or try another location.</string>
+    <string name="action_add">Add Movie/Show</string>
+    <string name="action_settings">Settings</string>
+    <string name="about">App Details</string>
 </resources>

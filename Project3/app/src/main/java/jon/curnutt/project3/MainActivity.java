@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -41,6 +43,33 @@ public class MainActivity extends AppCompatActivity {
         mValueEditText = findViewById(R.id.valueEditText);
         mMoviePlotTextView = findViewById(R.id.MoviePlotTextView);
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main_screen_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.action_add:
+                // Add new item to recycler view
+                return true;
+
+            case R.id.action_settings:
+                // Go to settings
+                return true;
+
+            case R.id.action_about:
+                // App description in alert dialogue
+                return true;
+
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
     void getDetails(String input) {
 
         // Create a new RequestQueue
