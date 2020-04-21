@@ -90,7 +90,7 @@ public class MainActivity extends AppCompatActivity {
 
                             String year = response.getString("Year");
 
-                            String titleYear = title + ", produced: " + year;
+                            String titleYear = title + ", released: " + year;
 
                             String plot = response.getString("Plot");
 
