@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">Project3</string>
+    <string name="app_name">Movie Vault</string>
+    <string name="enter_value">Enter a Movie title or TV Show title</string>
+    <string name="submit">Submit</string>
+    <string name="api_error">The API could not find the requested movie/show.</string>
+    <string name="invalid_location">The requested location is not valid. Check for spelling errors or try another location.</string>
 </resources>
