@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -29,12 +30,9 @@ import org.w3c.dom.Text;
 public class MainActivity extends AppCompatActivity {
 
     private final String TAG = "Movie/Show";
-    private EditText mValueEditText;
     private TextView mMovieTitleTextView;
     private TextView mMoviePlotTextView;
     private String KEY = "b5f9b213";
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +40,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         mMovieTitleTextView = findViewById(R.id.MovieTitleTextView);
-        mValueEditText = findViewById(R.id.valueEditText);
         mMoviePlotTextView = findViewById(R.id.MoviePlotTextView);
     }
 
@@ -57,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
         switch (item.getItemId()) {
             case R.id.action_add:
                 // Add new item to recycler view
+                showAddDialog(); //code for custom dialogue help at https://bhavyanshu.me/tutorials/create-custom-alert-dialog-in-android/08/20/2015/
                 return true;
 
             case R.id.action_settings:
@@ -81,6 +79,31 @@ public class MainActivity extends AppCompatActivity {
             default:
                 return super.onOptionsItemSelected(item);
         }
+    }
+
+    public void showAddDialog() {
+        AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
+        LayoutInflater inflater = this.getLayoutInflater();
+        final View dialogView = inflater.inflate(R.layout.add_custom_dialog, null);
+        dialogBuilder.setView(dialogView);
+
+        final EditText edt = (EditText) dialogView.findViewById(R.id.AlertDialogueAddEditText);
+
+        dialogBuilder.setTitle(R.string.add_title);
+        dialogBuilder.setMessage(R.string.add_message);
+        dialogBuilder.setPositiveButton(R.string.add, new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int whichButton) {
+                String input = edt.getText().toString();
+                checkInput(input);
+            }
+        });
+        dialogBuilder.setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int whichButton) {
+                //Close dialogue
+            }
+        });
+        AlertDialog b = dialogBuilder.create();
+        b.show();
     }
 
     void getDetails(String input) {
@@ -133,15 +156,15 @@ public class MainActivity extends AppCompatActivity {
         queue.add(requestObj);
     }
 
-    public void getDetailsClick(View view) {
+    public void checkInput(String input) {
 
-        String enteredText = mValueEditText.getText().toString();
+        //String enteredText = mValueEditText.getText().toString();
 
-        if(enteredText.length() == 0) {
-            Toast.makeText(this, "Please enter a value.", Toast.LENGTH_SHORT).show();
+        if(input.length() == 0) {
+            Toast.makeText(this, getString(R.string.empty_input_toast), Toast.LENGTH_SHORT).show();
             mMoviePlotTextView.setText("");
             mMovieTitleTextView.setText("");
         }
-        else getDetails(enteredText);
+        else getDetails(input);
     }
 }

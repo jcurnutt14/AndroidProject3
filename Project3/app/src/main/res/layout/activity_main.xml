@@ -6,40 +6,7 @@
     android:layout_height="match_parent"
     android:layout_marginTop="20dp"
     tools:context=".MainActivity">
-
-    <EditText
-        android:id="@+id/valueEditText"
-        android:layout_width="300dp"
-        android:layout_height="60dp"
-        android:textSize="20sp"
-        android:padding="10dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:inputType="text"/>
-
-    <TextView
-        android:id="@+id/enterValTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="10dp"
-        android:text="@string/enter_value"
-        android:textSize="20sp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/valueEditText"/>
-
-    <Button
-        android:id="@+id/submitButton"
-        android:text="@string/submit"
-        android:textSize="20sp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/enterValTextView"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:onClick="getDetailsClick"/>
-
+    
     <TextView
         android:id="@+id/MovieTitleTextView"
         android:layout_width="match_parent"
@@ -48,7 +15,7 @@
         android:textColor="@color/black"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/submitButton"
+        app:layout_constraintTop_toTopOf="parent"
         android:padding="5dp" />
 
     <TextView

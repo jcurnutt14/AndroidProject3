@@ -15,4 +15,9 @@
         to view more details.\n\n- Delete items from the home screen at any time.\n\n- Specify the app\'s
         theme and list ordering by selecting \'Settings\' in the app bar.
     </string>
+    <string name="add_message">Input a movie or TV show</string>
+    <string name="add_title">Add Item</string>
+    <string name="add">Add</string>
+    <string name="cancel">Cancel</string>
+    <string name="empty_input_toast">Please enter a value.</string>
 </resources>
