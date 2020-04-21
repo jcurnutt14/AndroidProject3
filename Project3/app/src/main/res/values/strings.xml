@@ -7,4 +7,12 @@
     <string name="action_add">Add Movie/Show</string>
     <string name="action_settings">Settings</string>
     <string name="about">App Details</string>
+    <string name="app_description_title">App Details</string>
+    <string name="close_appdesc_dialog">Close</string>
+    <string name="app_description">Authors: Tristan Durey and Jon Curnutt\n\nThis app functions
+        as a vault for users to store their favorite movies and TV shows.\n\n- Click the \'Add\'
+        button to add a new movie or show to the home screen.\n\n- Select an item on the home screen
+        to view more details.\n\n- Delete items from the home screen at any time.\n\n- Specify the app\'s
+        theme and list ordering by selecting \'Settings\' in the app bar.
+    </string>
 </resources>

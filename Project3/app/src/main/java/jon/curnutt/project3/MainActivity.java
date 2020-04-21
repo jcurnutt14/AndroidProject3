@@ -1,8 +1,10 @@
 package jon.curnutt.project3;
 // api key b5f9b213
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -63,6 +65,17 @@ public class MainActivity extends AppCompatActivity {
 
             case R.id.action_about:
                 // App description in alert dialogue
+                AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                builder.setMessage(MainActivity.this.getString(R.string.app_description))
+                        .setCancelable(false)
+                        .setTitle(R.string.app_description_title)
+                        .setPositiveButton(R.string.close_appdesc_dialog, new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                //close the dialog
+                            }
+                        });
+                AlertDialog alert = builder.create();
+                alert.show();
                 return true;
 
             default:
