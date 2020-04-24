@@ -45,6 +45,12 @@ public class MainActivity extends AppCompatActivity {
 
         mMovieTitleTextView = findViewById(R.id.MovieTitleTextView);
         mMoviePlotTextView = findViewById(R.id.MoviePlotTextView);
+
+        //Display same toast twice so user has time to read it.
+        Toast.makeText(this, getString(R.string.directions_toast),
+                Toast.LENGTH_LONG).show();
+        Toast.makeText(this, getString(R.string.directions_toast),
+                Toast.LENGTH_LONG).show();
     }
 
     @Override
